@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-93H0BK67KC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-93H0BK67KC");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>beautyunlocked.io — Beauty for Every Body</title>
+    <meta
+      name="description"
+      content="The world's first beauty directory designed with radical accessibility at its core. Join the waitlist."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f4efe4;
+        --card: #fbf8f2;
+        --maroon: #5a1b1e;
+        --maroon-dark: #451417;
+        --maroon-tint: #f3e4e1;
+        --rose-1: #e7c3c0;
+        --rose-2: #dda9a9;
+        --rose-3: #cb8b8e;
+        --rose-4: #b4696d;
+        --ink: #211b18;
+        --ink-soft: #5b534d;
+        --ink-faint: #8b837c;
+        --line: #e2dacb;
+        --footer-bg: #1b1512;
+        --footer-text: #c6bdb3;
+        --footer-line: #3a322c;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+        --radius-sm: 10px;
+        --max: 1200px;
+        --shadow: 0 20px 45px -20px rgba(33, 27, 24, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Sora", sans-serif;
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      button {
+        font-family: inherit;
+        cursor: pointer;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--maroon);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      .eyebrow {
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--maroon);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 24px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 15px;
+        border: 1px solid transparent;
+        transition:
+          transform 0.18s ease,
+          background 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+      .btn-primary {
+        background: var(--maroon);
+        color: var(--cream);
+      }
+      .btn-primary:hover {
+        background: var(--maroon-dark);
+        transform: translateY(-1px);
+      }
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+
+      .btn-ghost-link {
+        color: var(--maroon);
+        font-weight: 600;
+        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .btn-ghost-link .arrow {
+        transition: transform 0.18s ease;
+      }
+      .btn-ghost-link:hover .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ---------- HEADER ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(244, 239, 228, 0.86);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 32px;
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 17px;
+      }
+      .brand .mark {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--maroon);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cream);
+        flex-shrink: 0;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+      }
+      .nav-links a {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--ink);
+      }
+      .nav-links a:hover {
+        color: var(--maroon);
+      }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+      .menu-toggle svg {
+        width: 22px;
+        height: 22px;
+      }
+      .menu-toggle:hover {
+        background: var(--maroon-tint);
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        padding: 76px 0 100px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 5.4vw, 64px);
+        font-weight: 800;
+        color: var(--maroon);
+        line-height: 1.02;
+        margin: 14px 0 22px;
+      }
+      .hero-copy p {
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        max-width: 440px;
+        margin-bottom: 32px;
+      }
+      .social-proof {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 28px;
+      }
+      .avatar-stack {
+        display: flex;
+      }
+      .avatar-stack span {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 3px solid var(--cream);
+        margin-left: -12px;
+        background: var(--rose-2);
+      }
+      .avatar-stack span:first-child {
+        margin-left: 0;
+      }
+      .avatar-stack span:nth-child(1) {
+        background: var(--rose-1);
+      }
+      .avatar-stack span:nth-child(2) {
+        background: var(--rose-2);
+      }
+      .avatar-stack span:nth-child(3) {
+        background: var(--rose-3);
+      }
+      .avatar-stack span:nth-child(4) {
+        background: var(--rose-4);
+      }
+      .social-proof p {
+        font-size: 14.5px;
+        color: var(--ink-soft);
+      }
+      .social-proof strong {
+        color: var(--ink);
+      }
+
+      .hero-media {
+        position: relative;
+      }
+      .hero-media .photo {
+        border-radius: var(--radius-lg);
+        aspect-ratio: 4/4.6;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background:
+          radial-gradient(circle at 30% 20%, #e9c7b8 0%, transparent 55%),
+          radial-gradient(circle at 75% 75%, #7a2a2e 0%, transparent 60%),
+          linear-gradient(160deg, #c99a8b 0%, #5a1b1e 100%);
+        position: relative;
+      }
+      .hero-media .photo svg {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 38%;
+        height: 38%;
+        opacity: 0.9;
+      }
+      .float-card {
+        position: absolute;
+        left: -28px;
+        bottom: 36px;
+        width: 260px;
+        background: var(--card);
+        border-radius: var(--radius-md);
+        padding: 18px 20px;
+        box-shadow: var(--shadow);
+      }
+      .float-card .badge-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .float-card .badge-icon {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--maroon);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .float-card .badge-icon svg {
+        width: 14px;
+        height: 14px;
+      }
+      .float-card strong {
+        font-size: 14px;
+      }
+      .float-card p {
+        font-size: 13px;
+        font-style: italic;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      /* ---------- SECTION HEADS ---------- */
+      section {
+        padding: 90px 0;
+      }
+      .section-head {
+        max-width: 640px;
+        margin-bottom: 48px;
+      }
+      .section-head h2 {
+        font-size: clamp(28px, 3.4vw, 38px);
+        font-weight: 800;
+        color: var(--maroon);
+        margin-bottom: 14px;
+        line-height: 1.15;
+      }
+      .section-head.ink h2 {
+        color: var(--ink);
+      }
+      .section-head p {
+        font-size: 16.5px;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+
+      /* ---------- NEEDS CARDS ---------- */
+      .needs-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .needs-card {
+        border-radius: var(--radius-md);
+        padding: 32px 28px;
+        background: var(--card);
+        border: 1px solid var(--line);
+      }
+      .needs-card.filled {
+        background: var(--maroon);
+        border-color: var(--maroon);
+        color: var(--cream);
+      }
+      .icon-chip {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+        background: var(--maroon-tint);
+      }
+      .icon-chip svg {
+        width: 22px;
+        height: 22px;
+        color: var(--maroon);
+      }
+      .needs-card.filled .icon-chip {
+        background: rgba(255, 255, 255, 0.14);
+      }
+      .needs-card.filled .icon-chip svg {
+        color: var(--cream);
+      }
+      .needs-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .needs-card p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+        margin-bottom: 22px;
+      }
+      .needs-card.filled p {
+        color: rgba(244, 239, 228, 0.82);
+      }
+      .needs-card .btn-ghost-link {
+        font-size: 14px;
+      }
+      .needs-card.filled .btn-ghost-link {
+        color: var(--cream);
+      }
+
+      /* ---------- REVIEWS ---------- */
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .review-photo {
+        border-radius: var(--radius-lg);
+        aspect-ratio: 4/3.2;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 25% 30%, #8fa66e 0%, transparent 55%),
+          radial-gradient(circle at 80% 70%, #3f5b2e 0%, transparent 60%),
+          linear-gradient(160deg, #c99a8b 0%, #46331f 100%);
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+      .review-photo svg {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 34%;
+        height: 34%;
+        opacity: 0.9;
+      }
+      .reviews-intro p {
+        font-size: 18px;
+        line-height: 1.55;
+        color: var(--ink);
+        font-weight: 500;
+        margin-bottom: 28px;
+      }
+      .review-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 20px 22px;
+        margin-bottom: 16px;
+      }
+      .review-card .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+      .review-card strong {
+        font-size: 15px;
+      }
+      .stars {
+        color: var(--maroon);
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+      .review-card p {
+        font-size: 14.5px;
+        font-style: italic;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      /* ---------- FEATURES ROW ---------- */
+      .features-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 44px;
+      }
+      .feature h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 18px 0 10px;
+      }
+      .feature p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- BANNER IMAGE ---------- */
+      .banner-photo {
+        border-radius: var(--radius-lg);
+        aspect-ratio: 16/6.3;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 20% 30%, #d9c3b0 0%, transparent 55%),
+          radial-gradient(circle at 80% 60%, #8a5a52 0%, transparent 60%),
+          linear-gradient(120deg, #e4d6c4 0%, #7a5b4e 100%);
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+      .banner-photo svg {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 16%;
+        height: 26%;
+        opacity: 0.85;
+      }
+
+      /* ---------- WHO WE ARE ---------- */
+      .who-grid {
+        max-width: 760px;
+      }
+      .who-grid h2 {
+        font-size: clamp(26px, 3.2vw, 36px);
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1.2;
+        margin: 12px 0 20px;
+      }
+      .who-grid p {
+        font-size: 16.5px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        max-width: 660px;
+      }
+
+      /* ---------- TRANSPARENCY ---------- */
+      .trust-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 70px;
+      }
+      .trust-copy h2 {
+        font-size: clamp(28px, 3.2vw, 36px);
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1.18;
+        margin-bottom: 18px;
+      }
+      .trust-copy p {
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        margin-bottom: 22px;
+      }
+      .trust-item {
+        display: flex;
+        gap: 20px;
+        padding: 26px 0;
+        border-top: 1px solid var(--line);
+      }
+      .trust-item:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+      .trust-num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--maroon);
+        color: var(--maroon);
+        font-weight: 700;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .trust-item h3 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .trust-item p {
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- WAITLIST ---------- */
+      .waitlist-section {
+        background: var(--card);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .waitlist-inner {
+        max-width: 600px;
+      }
+      .waitlist-inner h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        font-weight: 800;
+        color: var(--ink);
+        margin: 12px 0 16px;
+      }
+      .waitlist-inner > p {
+        font-size: 16.5px;
+        line-height: 1.65;
+        color: var(--ink-soft);
+        margin-bottom: 30px;
+      }
+      .form-note {
+        font-size: 13px;
+        color: var(--ink-faint);
+        margin-top: 14px;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 64px 0 28px;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 44px;
+        border-bottom: 1px solid var(--footer-line);
+      }
+      .footer-brand .brand {
+        color: var(--cream);
+        margin-bottom: 14px;
+      }
+      .footer-brand p {
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 280px;
+        color: var(--footer-text);
+      }
+      footer h4 {
+        color: var(--cream);
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      footer .footer-col ul li {
+        margin-bottom: 11px;
+      }
+      footer .footer-col a {
+        font-size: 14px;
+        color: var(--footer-text);
+      }
+      footer .footer-col a:hover {
+        color: var(--cream);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 22px;
+        font-size: 13px;
+        color: var(--footer-text);
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* ---------- RESPONSIVE ---------- */
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 56px;
+        }
+        .hero-media {
+          order: -1;
+        }
+        .needs-grid {
+          grid-template-columns: 1fr;
+        }
+        .reviews-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .features-row {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .trust-grid {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--cream);
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px 32px 28px;
+          border-bottom: 1px solid var(--line);
+          display: none;
+          gap: 18px;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .menu-toggle {
+          display: flex;
+        }
+      }
+      @media (max-width: 560px) {
+        .wrap {
+          padding: 0 20px;
+        }
+        .nav {
+          padding: 16px 20px;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .hero {
+          padding: 44px 0 64px;
+        }
+        .float-card {
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          width: calc(100% - 32px);
+          bottom: -30px;
+        }
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a href="#" class="brand">
+          <span class="mark">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2 L14 9 L21 9 L15.5 13.5 L17.5 21 L12 16.8 L6.5 21 L8.5 13.5 L3 9 L10 9 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          beautyunlocked.io
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="signup.html" class="btn btn-primary">Sign Up</a>
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Coming soon</p>
+            <h1>Beauty for Every Body.</h1>
+            <p>
+              The world's first beauty directory designed with radical
+              accessibility at its core. Discover products and artists vetted
+              for your unique needs.
+            </p>
+            <a href="signup.html" class="btn btn-primary">Join the Waitlist</a>
+            <div class="social-proof">
+              <div class="avatar-stack">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <p>Join <strong>5,000+</strong> people already on the list</p>
+            </div>
+          </div>
+          <div class="hero-media">
+            <div
+              class="photo"
+              role="img"
+              aria-label="Person applying makeup, smiling into a mirror"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#F4EFE4"
+                stroke-width="1.4"
+              >
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+              </svg>
+            </div>
+            <div class="float-card">
+              <div class="badge-row">
+                <span class="badge-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#F4EFE4"
+                    stroke-width="2.2"
+                  >
+                    <path d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <strong>OT Certified</strong>
+              </div>
+              <p>
+                "Beauty is a form of self-expression accessible to every hand."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEEDS -->
+      <section id="products">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Find products that actually fit your needs</h2>
+            <p>
+              Filter your beauty routine through the lens of functionality and
+              ease of use.
+            </p>
+          </div>
+          <div class="needs-grid">
+            <div class="needs-card filled">
+              <div class="icon-chip">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M8 12V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11.2V6a1.5 1.5 0 0 1 3 0v6M17 12v-2a1.5 1.5 0 0 1 3 0v6a6 6 0 0 1-6 6h-2a7 7 0 0 1-5.6-2.8L3 14"
+                  />
+                </svg>
+              </div>
+              <h3>Mobility</h3>
+              <p>
+                Easy-open caps, ergonomic grips, pump dispensers, and
+                lightweight packaging for limited dexterity.
+              </p>
+              <a href="#" class="btn-ghost-link"
+                >Browse <span class="arrow">→</span></a
+              >
+            </div>
+            <div class="needs-card">
+              <div class="icon-chip">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"
+                  />
+                  <circle cx="12" cy="12" r="2.4" />
+                </svg>
+              </div>
+              <h3>Sensory</h3>
+              <p>
+                Fragrance-free, non-sticky textures, and soothing tactile
+                finishes for sensory hypersensitivity.
+              </p>
+              <a href="#" class="btn-ghost-link"
+                >Browse <span class="arrow">→</span></a
+              >
+            </div>
+            <div class="needs-card">
+              <div class="icon-chip">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <h3>Sight</h3>
+              <p>
+                High-contrast labeling, Braille integration, and distinct
+                physical identifiers for low vision users.
+              </p>
+              <a href="#" class="btn-ghost-link"
+                >Browse <span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Read real product reviews from your community</h2>
+            <p>
+              Feel confident while shopping for beauty products tested and
+              approved for your ease of use.
+            </p>
+          </div>
+          <div class="reviews-grid">
+            <div
+              class="review-photo"
+              role="img"
+              aria-label="Hand holding a skincare product bottle outdoors"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#F4EFE4"
+                stroke-width="1.4"
+              >
+                <rect x="9" y="3" width="6" height="17" rx="2" />
+                <path d="M9 8h6" />
+              </svg>
+            </div>
+            <div class="reviews-intro">
+              <p>
+                We put these standards based on real user reviews by the
+                disability community.
+              </p>
+              <div class="review-card">
+                <div class="row">
+                  <strong>Liz Field, Blind</strong>
+                  <span class="stars">★★★★☆</span>
+                </div>
+                <p>"Good for blind users, beautiful text features but…"</p>
+              </div>
+              <div class="review-card">
+                <div class="row">
+                  <strong>Sarah J, Mobility Needs</strong>
+                  <span class="stars">★★★★☆</span>
+                </div>
+                <p>"Incredible grip and easy to open even on bad days."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section>
+        <div class="wrap features-row">
+          <div class="feature">
+            <div class="icon-chip">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4Z"
+                />
+              </svg>
+            </div>
+            <h3>100% Vetted</h3>
+            <p>
+              Every product in our directory has been evaluated by occupational
+              therapists and approved by disabled users with relevant needs.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="icon-chip">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M4 20c8 0 16-6 16-16-8 0-16 6-16 16Z" />
+                <path d="M4 20c0-4 2-7 6-9" />
+              </svg>
+            </div>
+            <h3>Zero Junk</h3>
+            <p>
+              We remove misleading claims and accessibility-washing. If a
+              product doesn't pass our clinical criteria, it doesn't get listed.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="icon-chip">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  d="M12 20s-7-4.4-9.4-8.8C1.2 8 2.6 4.8 5.8 4.1c2-.4 3.9.5 5 2.1a1.2 1.2 0 0 0 2 0c1.1-1.6 3-2.5 5-2.1 3.2.7 4.6 3.9 3.2 7.1C19 15.6 12 20 12 20Z"
+                />
+              </svg>
+            </div>
+            <h3>Community Driven</h3>
+            <p>
+              Our community of disabled beauty lovers shapes every listing,
+              review, and feature we build. This platform belongs to you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BANNER -->
+      <section style="padding-top: 0">
+        <div class="wrap">
+          <div
+            class="banner-photo"
+            role="img"
+            aria-label="Occupational therapist helping a client apply makeup"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#F4EFE4"
+              stroke-width="1.4"
+            >
+              <circle cx="9" cy="8" r="3" />
+              <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+              <circle cx="18" cy="9" r="2.4" />
+              <path d="M14 20c.3-2.6 2-4.6 4-4.9" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHO WE ARE -->
+      <section id="about">
+        <div class="wrap who-grid">
+          <p class="eyebrow">Who we are</p>
+          <h2>
+            We are a team of occupational therapy experts and
+            accessibility-informed designers
+          </h2>
+          <p>
+            We are a team of disabled makeup artists, beauty product testers, OT
+            professionals, and designers who refuse to accept a beauty industry
+            that treats accessibility as an afterthought. We don't just review
+            products — we demand better ones.
+          </p>
+        </div>
+      </section>
+
+      <!-- TRANSPARENCY -->
+      <section>
+        <div class="wrap trust-grid">
+          <div class="trust-copy">
+            <h2>Transparency you can trust</h2>
+            <p>
+              Our vetting process combines occupational therapy expertise with
+              real-world disabled user feedback to ensure every product meets
+              genuine accessibility needs.
+            </p>
+            <a href="#" class="btn-ghost-link"
+              >View our standards <span class="arrow">→</span></a
+            >
+          </div>
+          <div class="trust-list">
+            <div class="trust-item">
+              <div class="trust-num">01</div>
+              <div>
+                <h3>Expert OT Review</h3>
+                <p>
+                  Every product is evaluated by certified Occupational
+                  Therapists and reviewed by hundreds of real users with
+                  disabilities.
+                </p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-num">02</div>
+              <div>
+                <h3>Clinical Criteria Content</h3>
+                <p>
+                  Products are assessed against established OT criteria, lab
+                  tests, and usability data based on specific disability
+                  categories.
+                </p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-num">03</div>
+              <div>
+                <h3>Biomechanical Compatibility</h3>
+                <p>
+                  We assess all physical factors including grip strength, reach
+                  range, and fine motor ability requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WAITLIST -->
+      <section class="waitlist-section" id="waitlist">
+        <div class="wrap waitlist-inner">
+          <p class="eyebrow">Join the waitlist</p>
+          <h2>Be first when we launch.</h2>
+          <p>
+            Join our waitlist and be among the first to know when we go live.
+            We'll send you a curated selection of accessible products to try
+            immediately.
+          </p>
+          <a href="signup.html" class="btn btn-primary">Join the Waitlist</a>
+          <p class="form-note">
+            By joining you agree to our Terms &amp; Privacy Policy. No spam,
+            ever.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div class="wrap">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="brand">
+              <span class="mark">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2 L14 9 L21 9 L15.5 13.5 L17.5 21 L12 16.8 L6.5 21 L8.5 13.5 L3 9 L10 9 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              beautyunlocked.io
+            </a>
+            <p>
+              The world's first beauty directory designed for radical
+              accessibility. Made by and for the disability community.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">How It Works</a></li>
+              <li><a href="#">Browse Directory</a></li>
+              <li><a href="#">For Brands</a></li>
+              <li><a href="#">Accessibility Standards</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Accessibility Statement</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© 2026 Beauty Unlocked. All rights reserved. Made with love for the
+            disability community.</span
+          >
+          <span>Built in Sydney, Australia</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ---- Mobile nav toggle ----
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
+  </body>
+</html>

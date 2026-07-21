@@ -399,6 +399,153 @@
           flex-direction: column;
         }
       }
+
+      /* ---------- ACCESSIBILITY WIDGET ---------- */
+      .a11y-widget {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 200;
+      }
+      .a11y-toggle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: var(--maroon);
+        color: var(--cream);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow);
+      }
+      .a11y-toggle:hover {
+        background: var(--maroon-dark);
+      }
+      .a11y-toggle svg {
+        width: 24px;
+        height: 24px;
+      }
+      .a11y-panel {
+        position: absolute;
+        right: 0;
+        bottom: 64px;
+        width: 264px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+      .a11y-panel[hidden] {
+        display: none;
+      }
+      .a11y-panel h2 {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        color: var(--ink);
+      }
+      .a11y-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .a11y-btn-group {
+        display: flex;
+        gap: 6px;
+      }
+      .a11y-btn-group button {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: var(--cream);
+        font-size: 12.5px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .a11y-btn-group button:hover {
+        border-color: var(--maroon);
+        color: var(--maroon);
+      }
+      .a11y-toggle-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        font-size: 14px;
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .a11y-reset {
+        width: 100%;
+        margin-top: 6px;
+        padding: 9px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: transparent;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+      .a11y-reset:hover {
+        border-color: var(--maroon);
+        color: var(--maroon);
+      }
+
+      html.a11y-contrast {
+        --cream: #ffffff;
+        --card: #ffffff;
+        --ink: #000000;
+        --ink-soft: #000000;
+        --ink-faint: #1a1a1a;
+        --line: #000000;
+        --maroon-dark: #000000;
+        --footer-bg: #000000;
+        --footer-text: #ffffff;
+        --footer-line: #ffffff;
+      }
+      html.a11y-dyslexia body,
+      html.a11y-dyslexia h1,
+      html.a11y-dyslexia h2,
+      html.a11y-dyslexia h3 {
+        font-family:
+          "Comic Sans MS", "Comic Sans", "Trebuchet MS", sans-serif !important;
+        letter-spacing: 0.02em;
+        line-height: 1.7;
+      }
+      html.a11y-underline-links a {
+        text-decoration: underline !important;
+      }
+      html.a11y-reduce-motion * {
+        transition: none !important;
+        animation: none !important;
+        scroll-behavior: auto !important;
+      }
+      html.a11y-text-1 body {
+        zoom: 112.5%;
+      }
+      html.a11y-text-2 body {
+        zoom: 125%;
+      }
+      html.a11y-text-3 body {
+        zoom: 137.5%;
+      }
+
+      @media (max-width: 560px) {
+        .a11y-widget {
+          right: 14px;
+          bottom: 14px;
+        }
+        .a11y-panel {
+          width: calc(100vw - 28px);
+          right: -6px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -577,6 +724,192 @@
         s.onerror = v;
         d.body.appendChild(s);
       }
+    </script>
+
+    <div class="a11y-widget">
+      <button
+        id="a11yToggle"
+        class="a11y-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="a11yPanel"
+        aria-label="Accessibility options"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="5" r="2" />
+          <path
+            d="M5 9c3.5 1.2 10.5 1.2 14 0M12 7v6l-3 8M12 13l3 8M9 13l-2 3M15 13l2 3"
+          />
+        </svg>
+      </button>
+      <div
+        class="a11y-panel"
+        id="a11yPanel"
+        hidden
+        role="dialog"
+        aria-label="Accessibility options"
+      >
+        <h2>Accessibility</h2>
+        <div class="a11y-row">
+          <span>Text size</span>
+          <div class="a11y-btn-group">
+            <button
+              type="button"
+              data-a11y-action="text-decrease"
+              aria-label="Decrease text size"
+            >
+              A−
+            </button>
+            <button
+              type="button"
+              data-a11y-action="text-reset"
+              aria-label="Reset text size"
+            >
+              A
+            </button>
+            <button
+              type="button"
+              data-a11y-action="text-increase"
+              aria-label="Increase text size"
+            >
+              A+
+            </button>
+          </div>
+        </div>
+        <label class="a11y-toggle-row">
+          <span>High contrast</span>
+          <input type="checkbox" data-a11y-toggle="contrast" />
+        </label>
+        <label class="a11y-toggle-row">
+          <span>Dyslexia-friendly font</span>
+          <input type="checkbox" data-a11y-toggle="dyslexia" />
+        </label>
+        <label class="a11y-toggle-row">
+          <span>Reduce motion</span>
+          <input type="checkbox" data-a11y-toggle="motion" />
+        </label>
+        <label class="a11y-toggle-row">
+          <span>Underline links</span>
+          <input type="checkbox" data-a11y-toggle="underline" />
+        </label>
+        <button type="button" class="a11y-reset" id="a11yReset">
+          Reset all
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // ---- Accessibility widget ----
+      // Self-built (not a third-party overlay) — see README for why.
+      (function () {
+        var STORAGE_KEY = "a11y-prefs";
+        var root = document.documentElement;
+        var toggleBtn = document.getElementById("a11yToggle");
+        var panel = document.getElementById("a11yPanel");
+        var resetBtn = document.getElementById("a11yReset");
+        var defaults = {
+          textStep: 0,
+          contrast: false,
+          dyslexia: false,
+          motion: false,
+          underline: false,
+        };
+
+        function loadPrefs() {
+          try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            return raw
+              ? Object.assign({}, defaults, JSON.parse(raw))
+              : Object.assign({}, defaults);
+          } catch (e) {
+            return Object.assign({}, defaults);
+          }
+        }
+        function savePrefs(p) {
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+          } catch (e) {}
+        }
+        function applyPrefs(p) {
+          root.classList.remove("a11y-text-1", "a11y-text-2", "a11y-text-3");
+          if (p.textStep > 0) root.classList.add("a11y-text-" + p.textStep);
+          root.classList.toggle("a11y-contrast", !!p.contrast);
+          root.classList.toggle("a11y-dyslexia", !!p.dyslexia);
+          root.classList.toggle("a11y-reduce-motion", !!p.motion);
+          root.classList.toggle("a11y-underline-links", !!p.underline);
+          panel
+            .querySelectorAll("[data-a11y-toggle]")
+            .forEach(function (input) {
+              input.checked = !!p[input.dataset.a11yToggle];
+            });
+        }
+
+        var prefs = loadPrefs();
+        applyPrefs(prefs);
+
+        toggleBtn.addEventListener("click", function () {
+          var open = !panel.hasAttribute("hidden");
+          if (open) {
+            panel.setAttribute("hidden", "");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          } else {
+            panel.removeAttribute("hidden");
+            toggleBtn.setAttribute("aria-expanded", "true");
+          }
+        });
+
+        document.addEventListener("click", function (e) {
+          if (
+            !panel.hasAttribute("hidden") &&
+            !panel.contains(e.target) &&
+            !toggleBtn.contains(e.target)
+          ) {
+            panel.setAttribute("hidden", "");
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && !panel.hasAttribute("hidden")) {
+            panel.setAttribute("hidden", "");
+            toggleBtn.setAttribute("aria-expanded", "false");
+            toggleBtn.focus();
+          }
+        });
+
+        panel.querySelectorAll("[data-a11y-action]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var action = btn.dataset.a11yAction;
+            if (action === "text-increase")
+              prefs.textStep = Math.min(3, prefs.textStep + 1);
+            if (action === "text-decrease")
+              prefs.textStep = Math.max(0, prefs.textStep - 1);
+            if (action === "text-reset") prefs.textStep = 0;
+            savePrefs(prefs);
+            applyPrefs(prefs);
+          });
+        });
+
+        panel.querySelectorAll("[data-a11y-toggle]").forEach(function (input) {
+          input.addEventListener("change", function () {
+            prefs[input.dataset.a11yToggle] = input.checked;
+            savePrefs(prefs);
+            applyPrefs(prefs);
+          });
+        });
+
+        resetBtn.addEventListener("click", function () {
+          prefs = Object.assign({}, defaults);
+          savePrefs(prefs);
+          applyPrefs(prefs);
+        });
+      })();
     </script>
   </body>
 </html>

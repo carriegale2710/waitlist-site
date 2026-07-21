@@ -485,6 +485,11 @@ section {
   color: var(--ink-soft);
 }
 
+.feature a {
+  font-size: 14px;
+  padding: 15px 0px;
+}
+
 /* ---------- BANNER IMAGE ---------- */
 .banner-photo {
   border-radius: var(--radius-lg);

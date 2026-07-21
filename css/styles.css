@@ -196,6 +196,9 @@ header {
 .menu-toggle:hover {
   background: var(--maroon-tint);
 }
+.hide-on-mobile {
+  display: none !important;
+}
 
 /* ---------- HERO ---------- */
 .hero {

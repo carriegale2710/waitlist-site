@@ -222,14 +222,6 @@
     </footer>
 
     <script>
-      // ---- Mobile nav toggle ----
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
-      menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-
       // ---- Contact form via Tally ----
       // SETUP REQUIRED: replace PASTE_YOUR_TALLY_FORM_ID in the iframe above
       // with your real Tally form ID. See SETUP.md for step-by-step instructions.
@@ -335,7 +327,7 @@
       </div>
     </div>
 
-    <script>
+    <!-- <script>
       // ---- Accessibility widget ----
       // Self-built (not a third-party overlay) — see README for why.
       (function () {
@@ -441,6 +433,7 @@
           applyPrefs(prefs);
         });
       })();
-    </script>
+    </script> -->
+    <script src="../js/script.js"></script>
   </body>
 </html>

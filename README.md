@@ -1,7 +1,8 @@
 # beautyunlocked.io — landing site
 
-Static site, no build step: `index.html`, `signup.html`, `contact.html`.
-Deploy as-is (e.g. to Vercel) or open directly in a browser.
+Static site, no build step: `index.html`, `signup.html`, `contact.html`,
+sharing one stylesheet, `styles.css`. Deploy as-is (e.g. to Vercel) or open
+directly in a browser — just keep all four files in the same folder.
 
 - `SETUP.md` — connecting the waitlist and contact forms to Tally.
 

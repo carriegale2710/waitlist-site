@@ -77,7 +77,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <!-- HERO -->
       <section class="hero">
         <div class="wrap hero-grid">
@@ -551,15 +551,31 @@
           </div>
         </div>
         <label class="a11y-toggle-row">
+          <span>Adjustable text spacing</span>
+          <input type="checkbox" data-a11y-toggle="spacing" />
+        </label>
+        <label class="a11y-toggle-row">
           <span>High contrast</span>
           <input type="checkbox" data-a11y-toggle="contrast" />
+        </label>
+        <label class="a11y-toggle-row">
+          <span>Low-saturation colors</span>
+          <input type="checkbox" data-a11y-toggle="lowSat" />
         </label>
         <label class="a11y-toggle-row">
           <span>Dyslexia-friendly font</span>
           <input type="checkbox" data-a11y-toggle="dyslexia" />
         </label>
         <label class="a11y-toggle-row">
-          <span>Reduce motion</span>
+          <span>Larger click targets &amp; cursor</span>
+          <input type="checkbox" data-a11y-toggle="largeTargets" />
+        </label>
+        <label class="a11y-toggle-row">
+          <span>Stronger focus outline</span>
+          <input type="checkbox" data-a11y-toggle="strongFocus" />
+        </label>
+        <label class="a11y-toggle-row">
+          <span>Reduce motion &amp; autoplay</span>
           <input type="checkbox" data-a11y-toggle="motion" />
         </label>
         <label class="a11y-toggle-row">
@@ -571,7 +587,6 @@
         </button>
       </div>
     </div>
-
     <script src="../js/script.js"></script>
   </body>
 </html>

@@ -865,6 +865,8 @@ footer .footer-col a:hover {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   padding: 18px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 .a11y-panel[hidden] {
   display: none;
@@ -963,6 +965,74 @@ html.a11y-text-2 body {
 }
 html.a11y-text-3 body {
   zoom: 137.5%;
+}
+
+/* adjustable text/line spacing */
+html.a11y-spacing body {
+  letter-spacing: 0.03em;
+  word-spacing: 0.15em;
+}
+html.a11y-spacing p {
+  line-height: 1.9 !important;
+}
+
+/* low-saturation / muted color mode — distinct from high contrast,
+     for photosensitivity / sensory overload rather than low vision */
+html.a11y-low-sat header,
+html.a11y-low-sat main,
+html.a11y-low-sat footer {
+  filter: saturate(0.55) contrast(0.96);
+}
+
+/* bigger click/tap targets + larger cursor, for motor/dexterity needs */
+html.a11y-large-targets a,
+html.a11y-large-targets button,
+html.a11y-large-targets input[type="checkbox"],
+html.a11y-large-targets .btn,
+html.a11y-large-targets .icon-chip,
+html.a11y-large-targets .menu-toggle,
+html.a11y-large-targets .a11y-toggle {
+  min-height: 44px;
+  min-width: 44px;
+}
+html.a11y-large-targets .nav-links a,
+html.a11y-large-targets .footer-col a,
+html.a11y-large-targets .btn-ghost-link {
+  display: inline-block;
+  padding: 8px 4px;
+}
+html.a11y-large-targets body,
+html.a11y-large-targets a,
+html.a11y-large-targets button {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M5 2 L5 33 L13 25 L19 37 L24 35 L18 23 L28 23 Z' fill='black' stroke='white' stroke-width='2'/%3E%3C/svg%3E")
+      5 2,
+    auto !important;
+}
+
+/* stronger, higher-contrast keyboard focus ring */
+html.a11y-strong-focus *:focus-visible {
+  outline: 4px solid #ffb800 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 2px #000 !important;
+  border-radius: 2px;
+}
+
+/* skip-to-content link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--maroon);
+  color: var(--cream);
+  padding: 12px 20px;
+  border-radius: 0 0 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.skip-link:focus {
+  left: 0;
 }
 
 @media (max-width: 560px) {

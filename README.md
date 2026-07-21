@@ -17,9 +17,13 @@ Hook up to google analytics.
 ## Accessibility widget — why we built it ourselves
 
 Every page includes a small accessibility toolbar (bottom-right corner)
-with text size, high contrast, a dyslexia-friendly font option, reduce
-motion, and underline-links controls. Preferences are saved per-browser
-and carry across pages.
+covering, in order: text size, adjustable text/line spacing, high contrast,
+low-saturation colors, a dyslexia-friendly font, larger click targets and
+cursor, a stronger keyboard focus outline, reduce motion (also pauses
+autoplaying video), and underline-links. Preferences are saved per-browser
+and carry across pages. Each page also has a "Skip to main content" link
+for keyboard and screen-reader users (invisible until it receives focus,
+usually the very first Tab press).
 
 We considered a free third-party option (UserWay, AccessiBe, and similar
 "overlay" widgets) but decided against it. These tools work by injecting a

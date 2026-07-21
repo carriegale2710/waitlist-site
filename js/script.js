@@ -26,6 +26,10 @@ navLinks.querySelectorAll("a").forEach((link) => {
     dyslexia: false,
     motion: false,
     underline: false,
+    spacing: false,
+    lowSat: false,
+    largeTargets: false,
+    strongFocus: false,
   };
 
   function loadPrefs() {
@@ -50,9 +54,21 @@ navLinks.querySelectorAll("a").forEach((link) => {
     root.classList.toggle("a11y-dyslexia", !!p.dyslexia);
     root.classList.toggle("a11y-reduce-motion", !!p.motion);
     root.classList.toggle("a11y-underline-links", !!p.underline);
+    root.classList.toggle("a11y-spacing", !!p.spacing);
+    root.classList.toggle("a11y-low-sat", !!p.lowSat);
+    root.classList.toggle("a11y-large-targets", !!p.largeTargets);
+    root.classList.toggle("a11y-strong-focus", !!p.strongFocus);
     panel.querySelectorAll("[data-a11y-toggle]").forEach(function (input) {
       input.checked = !!p[input.dataset.a11yToggle];
     });
+    // "Reduce motion" also pauses any autoplaying video, not just CSS animation
+    if (p.motion) {
+      document.querySelectorAll("video[autoplay]").forEach(function (v) {
+        try {
+          v.pause();
+        } catch (e) {}
+      });
+    }
   }
 
   var prefs = loadPrefs();

@@ -99,15 +99,16 @@ ul {
     background 0.18s ease,
     box-shadow 0.18s ease;
 }
-.btn-primary {
+.btn.btn-primary {
   background: var(--maroon);
   color: var(--cream);
 }
-.btn-primary:hover {
+.btn.btn-primary:hover {
   background: var(--maroon-dark);
+  color: var(--cream);
   transform: translateY(-1px);
 }
-.btn-primary:active {
+.btn.btn-primary:active {
   transform: translateY(0);
 }
 
@@ -196,9 +197,6 @@ header {
 .menu-toggle:hover {
   background: var(--maroon-tint);
 }
-.hide-on-mobile {
-  display: none !important;
-}
 
 /* ---------- HERO ---------- */
 .hero {
@@ -259,6 +257,7 @@ header {
 .social-proof p {
   font-size: 14.5px;
   color: var(--ink-soft);
+  margin-top: 30px;
 }
 .social-proof strong {
   color: var(--ink);
@@ -738,6 +737,19 @@ footer .footer-col a:hover {
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+@media screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .show-on-mobile {
+    display: none !important;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -779,6 +791,7 @@ footer .footer-col a:hover {
   }
   .nav-links.open {
     display: flex;
+    align-items: flex-end;
   }
   .menu-toggle {
     display: flex;
@@ -866,6 +879,7 @@ footer .footer-col a:hover {
   box-shadow: var(--shadow);
   padding: 18px;
   max-height: 500px;
+  max-width: 100vw;
   overflow-y: auto;
 }
 .a11y-panel[hidden] {
@@ -1041,7 +1055,8 @@ html.a11y-strong-focus *:focus-visible {
     bottom: 14px;
   }
   .a11y-panel {
-    width: calc(100vw - 28px);
+    width: calc(100vw - 60px);
+    max-width: 100vw;
     right: -6px;
   }
 }

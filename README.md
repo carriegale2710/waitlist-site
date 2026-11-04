@@ -83,3 +83,7 @@ js/script.js     Mobile menu and accessibility toolbar
 ```
 
 See [SETUP.md](SETUP.md) for connecting Tally and Google Analytics.
+
+## Using this as a template
+
+Replace the images and alt text before you publish. The hero, review and banner images in `index.html` are placeholder graphics, and each has the label `Write alt text here in plain language`. Screen readers will read that label aloud until you replace it with a description of your image.

@@ -10,15 +10,19 @@ Pre-launch website for an early-stage startup building a beauty directory for di
 
 The startup's promise is that beauty products are genuinely vetted for accessibility. The website is the first place a visitor can test that promise, so accessibility is both a usability requirement and part of the business case.
 
-| Business goal | How the site supports it |
-| --- | --- |
-| Grow the waitlist | Disabled visitors, the core audience, need to be able to read the page, navigate it and reach the signup form. |
-| Earn trust before launch | The site demonstrates the product's values instead of only claiming them. |
-| Stay credible with the community | Avoiding bolt-on overlays reduces the risk of contradicting the "no accessibility-washing" message. |
-| Validate demand cheaply | A coming-soon directory page tests interest before the directory is built. |
-| Keep costs and handover simple | A static site, with Tally handling forms, needs no backend, and non-technical teammates can view signups in Tally. |
+| Business goal                    | How the site supports it                                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Grow the waitlist                | Disabled visitors, the core audience, need to be able to read the page, navigate it and reach the signup form.     |
+| Earn trust before launch         | The site demonstrates the product's values instead of only claiming them.                                          |
+| Stay credible with the community | Avoiding bolt-on overlays reduces the risk of contradicting the "no accessibility-washing" message.                |
+| Validate demand cheaply          | A coming-soon directory page tests interest before the directory is built.                                         |
+| Keep costs and handover simple   | A static site, with Tally handling forms, needs no backend, and non-technical teammates can view signups in Tally. |
 
-## What I built
+---
+
+## Features
+
+![accessibility toolbar image with overlay effect on page](mockup/toolbar.png)
 
 - **Accessibility toolbar:** a custom toolbar on every page, with nine settings:
   - text size
@@ -30,6 +34,7 @@ The startup's promise is that beauty products are genuinely vetted for accessibi
   - stronger focus outline
   - reduced motion, which also pauses autoplaying video
   - underlined links
+
 - **Saved preferences:** settings persist across pages through `localStorage`. If storage is unavailable, the site falls back to the defaults.
 - **Keyboard support:** each page has a skip link and visible focus styles. Pressing `Escape` closes the toolbar and returns focus to its toggle button.
 - **System motion setting:** the CSS respects `prefers-reduced-motion`, so visitors don't need the toolbar to turn off transitions and smooth scrolling.
@@ -48,13 +53,13 @@ The toolbar doesn't replace accessible code or testing with disabled users. It a
 
 ## Tech stack
 
-| Area | Choice |
-| --- | --- |
-| Design | Figma, Google Stitch |
+| Area      | Choice                                                         |
+| --------- | -------------------------------------------------------------- |
+| Design    | Figma, Google Stitch                                           |
 | Front end | HTML, CSS, vanilla JavaScript, with no framework or build step |
-| Forms | Tally |
-| Analytics | Google Analytics 4 |
-| Hosting | Vercel |
+| Forms     | Tally                                                          |
+| Analytics | Google Analytics 4                                             |
+| Hosting   | Vercel                                                         |
 
 I used Google Stitch to explore the initial design, and refined the code through the steps shown in the commit history, including accessibility, responsiveness and deployment fixes.
 

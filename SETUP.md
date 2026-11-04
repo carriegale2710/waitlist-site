@@ -19,7 +19,7 @@ The site is a set of static files (`index.html`, `signup.html`, `contact.html`) 
 
 ### 3. Wire it into the site
 
-Open `signup.html` and find the `iframe` with `data-tally-src="https://tally.so/embed/PASTE_YOUR_TALLY_FORM_ID?..."`. Replace `PASTE_YOUR_TALLY_FORM_ID` with your real form ID from step 2.
+Copy `.env.example` to `.env` if you haven't already. Set `TALLY_WAITLIST_FORM_ID` to your form ID from step 2, then run `node build.js`. On Vercel, add the same variable under **Settings → Environment Variables**.
 
 That's it — no script URL, no API key, nothing else to configure. The embed script already included at the bottom of `signup.html` loads the form into the iframe automatically.
 
@@ -30,14 +30,14 @@ That's it — no script URL, no API key, nothing else to configure. The embed sc
 
 ### 5. Test it
 
-Open `signup.html` in a browser, submit a test email, and confirm it shows up under the form's **Responses** tab in Tally within a few seconds.
+Open `dist/signup.html` in a browser, submit a test email, and confirm it shows up under the form's **Responses** tab in Tally within a few seconds.
 
 ### Notes
 
 - Tally's free plan has no cap on forms or responses, so this scales for free as your waitlist grows.
 - Because the form itself is hosted and rendered by Tally (not your own fetch call to a public endpoint), there's no exposed write-access URL on your page for someone to abuse — safer by default than the earlier Google Apps Script approach.
 - If you later want automated "you're on the list" emails, launch announcements, or segmentation, connect Tally's Mailchimp/Brevo integration under **Integrations** rather than building that yourself.
-- `contact.html` uses a second, separate Tally form (name, email, subject, message), also embedded inline. Create that form the same way — steps 1–2 above — then open `contact.html` and replace `PASTE_YOUR_TALLY_FORM_ID` in its `iframe`'s `data-tally-src` with that form's ID. It's a distinct form from the waitlist one in `signup.html`.
+- `contact.html` uses a second, separate Tally form (name, email, subject, message), also embedded inline. Create that form the same way — steps 1–2 above — then set `TALLY_CONTACT_FORM_ID` to that form's ID. It's a distinct form from the waitlist one in `signup.html`.
 
 ## Hooking up to Google Analytics
 
@@ -47,7 +47,7 @@ Since this is a plain static site (no framework, no server), the simplest approa
 
 1. Go to [analytics.google.com](https://analytics.google.com), create a GA4 property, add a "Web" data stream for your domain.
 2. You'll get a Measurement ID like `G-XXXXXXXXXX`.
-3. Paste the same `gtag.js` snippet into the `<head>` of every page (`index.html`, `signup.html`, `contact.html`).
+3. Set `GA_MEASUREMENT_ID` to that ID in `.env`, then run `node build.js`. The `gtag.js` snippet is already in the `<head>` of every page. On Vercel, add the same variable under **Settings → Environment Variables**.
 
 **What you get for free with zero extra code**, once Enhanced Measurement is on (it's on by default): page views, scroll depth (90%), outbound link clicks, and site search — genuinely useful before writing a single custom event.
 

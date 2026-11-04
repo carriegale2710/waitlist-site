@@ -4,7 +4,7 @@
     <!-- Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-93H0BK67KC"
+      src="https://www.googletagmanager.com/gtag/js?id={{GA_MEASUREMENT_ID}}"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,14 +13,14 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-93H0BK67KC");
+      gtag("config", "{{GA_MEASUREMENT_ID}}");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us — beautyunlocked.io</title>
+    <title>Contact Us — {{BRAND_NAME}}</title>
     <meta
       name="description"
-      content="Get in touch with the beautyunlocked.io team."
+      content="Get in touch with the {{BRAND_NAME}} team."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,7 +44,7 @@
               />
             </svg>
           </span>
-          beautyunlocked.io
+          {{BRAND_NAME}}
         </a>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html#products">Products</a></li>
@@ -111,8 +111,8 @@
               </div>
               <h3>Email us</h3>
               <p>For general questions or partnership inquiries.</p>
-              <a class="link" href="mailto:hello@beautyunlocked.io"
-                >hello@beautyunlocked.io</a
+              <a class="link" href="mailto:{{CONTACT_EMAIL}}"
+                >{{CONTACT_EMAIL}}</a
               >
             </div>
             <div class="info-card">
@@ -157,7 +157,7 @@
 
           <div class="form-card">
             <iframe
-              data-tally-src="https://tally.so/embed/A7OJrN?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+              data-tally-src="https://tally.so/embed/{{TALLY_CONTACT_FORM_ID}}?alignLeft=1&transparentBackground=1&dynamicHeight=1"
               loading="lazy"
               width="100%"
               height="500"
@@ -187,7 +187,7 @@
                   />
                 </svg>
               </span>
-              beautyunlocked.io
+              {{BRAND_NAME}}
             </a>
             <p>
               The world's first beauty directory designed for radical
@@ -224,18 +224,17 @@
         </div>
         <div class="footer-bottom">
           <span
-            >© 2026 Beauty Unlocked. All rights reserved. Made with love for the
+            >© 2026 {{COMPANY_NAME}}. All rights reserved. Made with love for the
             disability community.</span
           >
-          <span>Built in Sydney, Australia</span>
+          <span>Built in {{LOCATION}}</span>
         </div>
       </div>
     </footer>
 
     <script>
       // ---- Contact form via Tally ----
-      // SETUP REQUIRED: replace PASTE_YOUR_TALLY_FORM_ID in the iframe above
-      // with your real Tally form ID. See SETUP.md for step-by-step instructions.
+      // build.js fills in the form ID from .env. See SETUP.md for step-by-step instructions.
       var d = document,
         w = "https://tally.so/widgets/embed.js",
         v = function () {

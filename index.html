@@ -4,7 +4,7 @@
     <!-- Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-93H0BK67KC"
+      src="https://www.googletagmanager.com/gtag/js?id={{GA_MEASUREMENT_ID}}"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,14 +13,14 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "G-93H0BK67KC");
+      gtag("config", "{{GA_MEASUREMENT_ID}}");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>beautyunlocked.io — Beauty for Every Body</title>
+    <title>{{BRAND_NAME}} — {{SITE_TAGLINE}}</title>
     <meta
       name="description"
-      content="The world's first beauty directory designed with radical accessibility at its core. Join the waitlist."
+      content="{{SITE_DESCRIPTION}}"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,7 +44,7 @@
               />
             </svg>
           </span>
-          beautyunlocked.io
+          {{BRAND_NAME}}
         </a>
         <ul class="nav-links" id="navLinks">
           <li><a href="#products">Products</a></li>
@@ -88,7 +88,7 @@
         <div class="wrap hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Coming soon</p>
-            <h1>Beauty for Every Body.</h1>
+            <h1>{{SITE_TAGLINE}}.</h1>
             <p>
               The world's first beauty directory designed with radical
               accessibility at its core. Discover products and artists vetted
@@ -475,7 +475,7 @@
                   />
                 </svg>
               </span>
-              beautyunlocked.io
+              {{BRAND_NAME}}
             </a>
             <p>
               The world's first beauty directory designed for radical
@@ -512,10 +512,10 @@
         </div>
         <div class="footer-bottom">
           <span
-            >© 2026 Beauty Unlocked. All rights reserved. Made with love for the
+            >© 2026 {{COMPANY_NAME}}. All rights reserved. Made with love for the
             disability community.</span
           >
-          <span>Built in Sydney, Australia</span>
+          <span>Built in {{LOCATION}}</span>
         </div>
       </div>
     </footer>

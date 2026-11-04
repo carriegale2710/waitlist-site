@@ -970,10 +970,19 @@ html.a11y-dyslexia h3 {
 html.a11y-underline-links a {
   text-decoration: underline !important;
 }
+html.a11y-reduce-motion,
 html.a11y-reduce-motion * {
   transition: none !important;
   animation: none !important;
   scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 html.a11y-text-1 body {
   zoom: 112.5%;

@@ -4,7 +4,7 @@
 
 Pre-launch website for an early-stage startup client building a beauty directory for disabled people. I designed it, built it in vanilla HTML, CSS and JavaScript, and deployed it on Vercel.
 
-![Final design mockup of the beautyunlocked.io landing page](mockup/Mockup%20Final%20version%2021-07-26.png)
+![Final design mockup of the beautyunlocked.io landing page](assets/mockup/final.png)
 
 ## Why accessibility drives this project
 
@@ -22,7 +22,7 @@ The startup's promise is that beauty products are genuinely vetted for accessibi
 
 ## Features
 
-![accessibility toolbar image with overlay effect on page](mockup/toolbar.png)
+![accessibility toolbar image with overlay effect on page](assets/demo/toolbar.png)
 
 - **Accessibility toolbar:** a custom toolbar on every page, with nine settings:
   - text size

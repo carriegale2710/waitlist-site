@@ -10,7 +10,7 @@
 
 **How I built it**: I designed it, built it in vanilla HTML, CSS and JavaScript, and deployed it on Vercel. It was built with portability and simplicity in mind, can be reused as a starter template for future marketing campaigns validating new ideas quickly.
 
-## Business context
+## Business context & challenge
 
 The startup's promise is that beauty products are genuinely vetted for accessibility. The website is the first place a visitor can test that promise, so accessibility is both a usability requirement and critical part of the business case.
 
@@ -56,7 +56,16 @@ I used Google Stitch to explore the initial design. It exported design tokens (c
 - **Assistive technology support:** the mobile menu and toolbar expose their open or closed state through `aria-expanded`.
 - **Mobile-first, responsive layout:** styles are written for mobile first, then widened with breakpoints for tablet and desktop, so the pages share one stylesheet across screen sizes.
 - **Waitlist and contact forms:** both are embedded Tally forms.
-- **Demand tracking:** Google Analytics 4 runs on every page. The directory page fires a custom `directory_fake_door_view` event with the chosen category, such as mobility, sensory or sight, to show which needs attract the most interest.
+- **Demand tracking:** Google Analytics 4 runs on every page. The directory page fires a custom event with the chosen category, such as mobility, sensory or sight, to show which needs attract the most interest:
+
+```js
+// html/comingsoon.html
+if (typeof gtag === "function") {
+  gtag("event", "directory_fake_door_view", {
+    category: category,
+  });
+}
+```
 
 ## Key decisions
 
@@ -64,7 +73,23 @@ I used Google Stitch to explore the initial design. It exported design tokens (c
 
 I originally considered free overlay widgets such as UserWay and accessiBe, and decided against them. Overlays inject a script that tries to fix problems without changing the underlying code. Accessibility professionals and disabled advocates have documented that they can conflict with screen readers and other assistive technology ([Overlay Fact Sheet](https://overlayfactsheet.com/)).
 
-For a brand built on genuine accessibility, that risk was too high. I built a small toolbar that uses simple CSS class toggles, with no third-party script and no AI-guessed fixes. Toolbar preferences stay in the visitor's browser.
+For a brand built on genuine accessibility, that risk was too high. I built a small toolbar that uses simple CSS class toggles, with no third-party script and no AI-guessed fixes. Toolbar preferences stay in the visitor's browser:
+
+```js
+// js/script.js
+function applyPrefs(p) {
+  root.classList.toggle("a11y-contrast", !!p.contrast);
+  root.classList.toggle("a11y-dyslexia", !!p.dyslexia);
+  root.classList.toggle("a11y-reduce-motion", !!p.motion);
+  // ...same pattern for the other five toggles
+}
+
+function savePrefs(p) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
+  } catch (e) {}
+}
+```
 
 The toolbar doesn't replace accessible code or testing with disabled users. It adds options on top of the base site.
 
@@ -72,7 +97,7 @@ The toolbar doesn't replace accessible code or testing with disabled users. It a
 
 I built the site in plain HTML, CSS and JavaScript because it's a mostly static 4-page site with little interactivity. React doesn't make a site inaccessible, since accessibility depends on the HTML it produces, but it wouldn't have solved any problem this site has.
 
-A waitlist site usually needs only a few core pages. This one has a landing page, a signup page and a contact page, plus a coming-soon directory page to test demand. Keeping it simple makes it easy for early-stage startups and marketing teams to set up quickly and start getting user feedback.
+**A waitlist site usually needs only a few core pages.** This one has a landing page, a signup page and a contact page, plus a coming-soon directory page to test demand. Keeping it simple makes it easy for early-stage startups and marketing teams to set up quickly and start getting user feedback.
 
 It would also have added risks I'd need to manage:
 
@@ -81,11 +106,11 @@ It would also have added risks I'd need to manage:
 - **Navigation:** client-side route changes don't announce the new page or reset focus by default. Standard links between pages handle this natively.
 - **SEO:** React renders content client-side, so crawlers and link previews see less at first load. Bad for marketing campaigns needing search visibility and traffic.
 
-The trade-off is duplication: the header, footer and toolbar are repeated on every page. That's manageable at this size. If it stops being manageable, a static site generator such as _Astro_ would allow shared components while still shipping plain HTML. I'd reconsider React when the directory needs interactive features such as filtering, saved products or accounts.
+**The trade-off is duplication**: the header, footer and toolbar are repeated on every page. That's manageable at this size. If it stops being manageable, a static site generator such as _**Astro**_ would allow shared components while still shipping plain HTML. I'd reconsider React when the directory needs interactive features such as filtering, saved products or accounts.
 
 ## Local setup
 
-To build the site, you need Node 20.12 or newer. There are no packages to install.
+To build the site, you need **Node 20.12** or newer. There are no packages to install.
 
 1. Copy `.env.example` to `.env` and fill in every value.
 2. Run `node build.js`.
@@ -106,6 +131,8 @@ Replace the images and alt text before you publish. The hero, review and banner 
 ## Connecting the waitlist form to Tally
 
 The site is a set of static files (`index.html`, `signup.html`, `contact.html`), so no server is needed. "Join the Waitlist" (in the nav, hero, and footer CTA of `index.html`) links to `signup.html`, a dedicated page with an embedded **Tally** form. Tally stores every submission for you and gives your team a spreadsheet-like view with no code required.
+
+![screenshot of website contact page with a tally form](assets/demo/tally.png)
 
 ### 1. Create the waitlist form in Tally
 
@@ -169,3 +196,7 @@ That gives you a real funnel: homepage view → CTA click → signup page view �
 - It hasn't been tested with disabled users beyond the occupational therapist review during design, and no formal WCAG audit has been done. The site doesn't claim WCAG conformance.
 - The accessibility of the embedded Tally forms hasn't been audited. You also may need to adjust the Tally form to your design system.
 - Signup conversion isn't tracked yet; you'll need to set up your own Google Analytics event trackers.
+
+## Attribution
+
+MIT License, however please do not copy the brand design. If you reuse or adapt this project, a credit/link back to the original repository is appreciated.

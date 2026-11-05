@@ -865,21 +865,41 @@ footer .footer-col a:hover {
   height: 24px;
 }
 .a11y-panel {
-  position: absolute;
-  right: 0;
-  bottom: 64px;
+  /* fixed + % (not vw): % resolves to the real viewport under body zoom text sizing */
+  position: fixed;
+  right: 20px;
+  bottom: 84px;
   width: 264px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   padding: 18px;
-  max-height: 500px;
-  max-width: 100vw;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 104px);
   overflow-y: auto;
 }
 .a11y-panel[hidden] {
   display: none;
+}
+/* float + sticky: stays in the top-right corner while a short panel scrolls */
+.a11y-close {
+  float: right;
+  position: sticky;
+  top: -8px;
+  margin: -8px -8px 0 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  font-size: 18px;
+  line-height: 1;
+  color: var(--ink);
+}
+.a11y-close:hover {
+  border-color: var(--maroon);
+  color: var(--maroon);
 }
 .a11y-panel h2 {
   font-size: 15px;
@@ -889,6 +909,7 @@ footer .footer-col a:hover {
 }
 .a11y-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
@@ -1066,8 +1087,9 @@ html.a11y-strong-focus *:focus-visible {
     bottom: 14px;
   }
   .a11y-panel {
-    width: calc(100vw - 60px);
-    max-width: 100vw;
-    right: -6px;
+    right: 14px;
+    bottom: 78px;
+    max-width: calc(100% - 28px);
+    max-height: calc(100% - 92px);
   }
 }

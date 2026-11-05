@@ -20,6 +20,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
   var toggleBtn = document.getElementById("a11yToggle");
   var panel = document.getElementById("a11yPanel");
   var resetBtn = document.getElementById("a11yReset");
+  var closeBtn = document.getElementById("a11yClose");
   var defaults = {
     textStep: 0,
     contrast: false,
@@ -74,11 +75,15 @@ navLinks.querySelectorAll("a").forEach((link) => {
   var prefs = loadPrefs();
   applyPrefs(prefs);
 
+  function closePanel() {
+    panel.setAttribute("hidden", "");
+    toggleBtn.setAttribute("aria-expanded", "false");
+  }
+
   toggleBtn.addEventListener("click", function () {
     var open = !panel.hasAttribute("hidden");
     if (open) {
-      panel.setAttribute("hidden", "");
-      toggleBtn.setAttribute("aria-expanded", "false");
+      closePanel();
     } else {
       panel.removeAttribute("hidden");
       toggleBtn.setAttribute("aria-expanded", "true");
@@ -91,17 +96,20 @@ navLinks.querySelectorAll("a").forEach((link) => {
       !panel.contains(e.target) &&
       !toggleBtn.contains(e.target)
     ) {
-      panel.setAttribute("hidden", "");
-      toggleBtn.setAttribute("aria-expanded", "false");
+      closePanel();
     }
   });
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !panel.hasAttribute("hidden")) {
-      panel.setAttribute("hidden", "");
-      toggleBtn.setAttribute("aria-expanded", "false");
+      closePanel();
       toggleBtn.focus();
     }
+  });
+
+  closeBtn.addEventListener("click", function () {
+    closePanel();
+    toggleBtn.focus();
   });
 
   panel.querySelectorAll("[data-a11y-action]").forEach(function (btn) {

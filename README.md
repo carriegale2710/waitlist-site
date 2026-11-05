@@ -67,13 +67,14 @@ The trade-off is duplication: the header, footer and toolbar are repeated on eve
 
 ## Tech stack
 
-| Area      | Choice                                                       |
-| --------- | ------------------------------------------------------------ |
-| Design    | Figma, Google Stitch                                         |
-| Front end | HTML, CSS, vanilla JavaScript, with no framework or packages |
-| Forms     | Tally                                                        |
-| Analytics | Google Analytics 4                                           |
-| Hosting   | Vercel                                                       |
+| Area      | Choice                                                                                                 |
+| --------- | ------------------------------------------------------------------------------------------------------ |
+| Design    | Figma, Google Stitch                                                                                   |
+| Front end | HTML, CSS, vanilla JavaScript, with no framework or packages                                           |
+| Fonts     | Sora and Inter (Google Fonts), OpenDyslexic via jsdelivr CDN for the dyslexia-friendly toolbar setting |
+| Forms     | Tally                                                                                                  |
+| Analytics | Google Analytics 4                                                                                     |
+| Hosting   | Vercel                                                                                                 |
 
 I used Google Stitch to explore the initial design, and refined the code through the steps shown in the commit history, including accessibility, responsiveness and deployment fixes.
 

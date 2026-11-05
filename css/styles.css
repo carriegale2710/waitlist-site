@@ -950,12 +950,18 @@ html.a11y-contrast {
   --footer-text: #ffffff;
   --footer-line: #ffffff;
 }
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
 html.a11y-dyslexia body,
 html.a11y-dyslexia h1,
 html.a11y-dyslexia h2,
 html.a11y-dyslexia h3 {
-  font-family:
-    "Comic Sans MS", "Comic Sans", "Trebuchet MS", sans-serif !important;
+  font-family: "OpenDyslexic", Arial, sans-serif !important;
   letter-spacing: 0.02em;
   line-height: 1.7;
 }

@@ -32,7 +32,7 @@ if (missing.size) {
 fs.rmSync("dist", { recursive: true, force: true });
 fs.mkdirSync("dist");
 for (const [file, html] of built) fs.writeFileSync(`dist/${file}`, html);
-for (const dir of ["css", "js", "images"]) {
+for (const dir of ["css", "js", "assets/img"]) {
   if (fs.existsSync(dir)) fs.cpSync(dir, `dist/${dir}`, { recursive: true });
 }
 console.log(`Built ${built.length} pages to dist/`);

@@ -272,12 +272,13 @@ header {
   box-shadow: var(--shadow);
   position: relative;
 }
-.hero-media .photo svg {
+.hero-media .photo img {
   position: absolute;
   inset: 0;
   margin: auto;
   width: 38%;
   height: 38%;
+  object-fit: contain;
   opacity: 0.9;
 }
 .float-card {
@@ -417,12 +418,13 @@ section {
   box-shadow: var(--shadow);
   position: relative;
 }
-.review-photo svg {
+.review-photo img {
   position: absolute;
   inset: 0;
   margin: auto;
   width: 34%;
   height: 34%;
+  object-fit: contain;
   opacity: 0.9;
 }
 .reviews-intro p {
@@ -494,12 +496,13 @@ section {
   box-shadow: var(--shadow);
   position: relative;
 }
-.banner-photo svg {
+.banner-photo img {
   position: absolute;
   inset: 0;
   margin: auto;
   width: 16%;
   height: 26%;
+  object-fit: contain;
   opacity: 0.85;
 }
 

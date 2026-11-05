@@ -275,10 +275,9 @@ header {
 .hero-media .photo img {
   position: absolute;
   inset: 0;
-  margin: auto;
-  width: 38%;
-  height: 38%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.9;
 }
 .float-card {
@@ -421,10 +420,9 @@ section {
 .review-photo img {
   position: absolute;
   inset: 0;
-  margin: auto;
-  width: 34%;
-  height: 34%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.9;
 }
 .reviews-intro p {
@@ -499,10 +497,9 @@ section {
 .banner-photo img {
   position: absolute;
   inset: 0;
-  margin: auto;
-  width: 16%;
-  height: 26%;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.85;
 }
 

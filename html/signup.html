@@ -17,26 +17,25 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directory — Coming Soon — {{BRAND_NAME}}</title>
+    <title>Join the Waitlist — {{BRAND_NAME}}</title>
     <meta
       name="description"
-      content="Our accessible product directory is on its way. Join the waitlist to be first to know when it launches."
+      content="Join the {{BRAND_NAME}} waitlist and be first to know when we launch."
     />
-    <meta name="robots" content="noindex" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header>
       <nav class="nav">
-        <a href="index.html" class="brand">
+        <a href="../index.html" class="brand">
           <span class="mark">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
               <path
@@ -48,8 +47,8 @@
           {{BRAND_NAME}}
         </a>
         <ul class="nav-links" id="navLinks">
-          <li><a href="index.html#products">Products</a></li>
-          <li><a href="index.html#about">About</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="../index.html#about">About</a></li>
           <li><a href="contact.html">Contact Us</a></li>
           <li>
             <a href="signup.html" class="btn btn-primary show-on-mobile"
@@ -86,13 +85,19 @@
     <main id="main">
       <section class="page-header">
         <div class="wrap">
-          <p class="eyebrow" id="dirEyebrow">Coming soon</p>
-          <h1 id="dirTitle">The directory is on its way.</h1>
-          <p id="dirBody">
-            We're building the world's first beauty directory designed for
-            radical accessibility. Join the waitlist and we'll email you the
-            moment it launches.
+          <p class="eyebrow">Coming soon</p>
+          <h1>Be first when we launch.</h1>
+          <p>
+            Join our waitlist and be among the first to know when we go live.
+            We'll send you a curated selection of accessible products to try
+            immediately.
           </p>
+          <div class="social-proof">
+            <div class="avatar-stack">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p>Join <strong>5,000+</strong> people already on the list</p>
+          </div>
         </div>
       </section>
 
@@ -124,7 +129,7 @@
       <div class="wrap">
         <div class="footer-top">
           <div class="footer-brand">
-            <a href="index.html" class="brand">
+            <a href="../index.html" class="brand">
               <span class="mark">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                   <path
@@ -143,7 +148,7 @@
           <div class="footer-col">
             <h4>Product</h4>
             <ul>
-              <li><a href="index.html#products">How It Works</a></li>
+              <li><a href="../index.html#products">How It Works</a></li>
               <li>
                 <a href="comingsoon.html?category=general">Browse Directory</a>
               </li>
@@ -154,7 +159,7 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="../index.html#about">About Us</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -179,54 +184,8 @@
     </footer>
 
     <script>
-      // ---- Fake-door directory copy + GA tracking ----
-      // The ?category= param on the incoming link (see index.html) tells us
-      // which "browse" CTA the visitor clicked, so we can tailor the message
-      // and see, in GA, which need (mobility / sensory / sight / general)
-      // drove the most interest.
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var category = (params.get("category") || "general").toLowerCase();
-
-        var copy = {
-          mobility: {
-            eyebrow: "Mobility",
-            title: "Our mobility-friendly directory is on its way.",
-            body: "Easy-open caps, ergonomic grips, pump dispensers, and lightweight packaging — all vetted by OTs for limited dexterity. Join the waitlist and we'll email you the moment mobility picks go live.",
-          },
-          sensory: {
-            eyebrow: "Sensory",
-            title: "Our sensory-friendly directory is on its way.",
-            body: "Fragrance-free, non-sticky, soothing-texture products for sensory hypersensitivity are coming. Join the waitlist and we'll email you as soon as the sensory category launches.",
-          },
-          sight: {
-            eyebrow: "Sight",
-            title: "Our vision-accessible directory is on its way.",
-            body: "High-contrast labeling, Braille integration, and distinct physical identifiers for low vision users — we're building it now. Join the waitlist to be first in line.",
-          },
-          general: {
-            eyebrow: "Coming soon",
-            title: "The full product directory is on its way.",
-            body: "We're building the world's first beauty directory designed for radical accessibility. Join the waitlist and we'll email you the moment it launches.",
-          },
-        };
-
-        var c = copy[category] || copy.general;
-        document.getElementById("dirEyebrow").textContent = c.eyebrow;
-        document.getElementById("dirTitle").textContent = c.title;
-        document.getElementById("dirBody").textContent = c.body;
-        document.title = c.eyebrow + " " + document.title;
-
-        if (typeof gtag === "function") {
-          gtag("event", "directory_fake_door_view", {
-            category: category,
-          });
-        }
-      })();
-    </script>
-
-    <script>
       // ---- Waitlist signup via Tally ----
+      // build.js fills in the form ID from .env. See SETUP.md for step-by-step instructions.
       var d = document,
         w = "https://tally.so/widgets/embed.js",
         v = function () {
@@ -344,6 +303,6 @@
         </button>
       </div>
     </div>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

@@ -14,7 +14,10 @@ const escapeHtml = (value) =>
     .replace(/"/g, "&quot;");
 
 const missing = new Set();
-const pages = fs.readdirSync(".").filter((file) => file.endsWith(".html"));
+const pages = [
+  ...fs.readdirSync(".").filter((file) => file.endsWith(".html")),
+  ...fs.readdirSync("html").map((file) => `html/${file}`),
+];
 const built = pages.map((file) => [
   file,
   fs.readFileSync(file, "utf8").replace(/\{\{(\w+)\}\}/g, (_, name) => {
@@ -31,6 +34,7 @@ if (missing.size) {
 
 fs.rmSync("dist", { recursive: true, force: true });
 fs.mkdirSync("dist");
+fs.mkdirSync("dist/html");
 for (const [file, html] of built) fs.writeFileSync(`dist/${file}`, html);
 for (const dir of ["css", "js", "assets/img"]) {
   if (fs.existsSync(dir)) fs.cpSync(dir, `dist/${dir}`, { recursive: true });

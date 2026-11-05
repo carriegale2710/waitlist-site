@@ -270,10 +270,6 @@ header {
   aspect-ratio: 4/4.6;
   overflow: hidden;
   box-shadow: var(--shadow);
-  background:
-    radial-gradient(circle at 30% 20%, #e9c7b8 0%, transparent 55%),
-    radial-gradient(circle at 75% 75%, #7a2a2e 0%, transparent 60%),
-    linear-gradient(160deg, #c99a8b 0%, #5a1b1e 100%);
   position: relative;
 }
 .hero-media .photo svg {
@@ -418,10 +414,6 @@ section {
   border-radius: var(--radius-lg);
   aspect-ratio: 4/3.2;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 25% 30%, #8fa66e 0%, transparent 55%),
-    radial-gradient(circle at 80% 70%, #3f5b2e 0%, transparent 60%),
-    linear-gradient(160deg, #c99a8b 0%, #46331f 100%);
   box-shadow: var(--shadow);
   position: relative;
 }
